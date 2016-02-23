@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B550DC8-ED76-43B6-9A1B-FE38DE1D19F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>webQL</RootNamespace>
+    <AssemblyName>webQL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Ganyweb\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>webserver.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>webQL.program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DB Demo|AnyCPU'">
+    <OutputPath>bin\DB Demo\</OutputPath>
+    <Optimize>false</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DB Demo|x64'">
+    <OutputPath>bin\x64\DB Demo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DB Demo|x86'">
+    <OutputPath>bin\x86\DB Demo\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'dotHealth|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\dotHealth\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'dotHealth|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\dotHealth\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'dotHealth|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\dotHealth\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Anamnesis|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Anamnesis\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Anamnesis|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Anamnesia\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Anamnesis|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Anamnesia\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Oanda|AnyCPU'">
+    <OutputPath>bin\Oanda\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Oanda|x64'">
+    <OutputPath>bin\x64\Oanda\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Oanda|x86'">
+    <OutputPath>bin\x86\Oanda\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET">
+      <HintPath>..\packages\EcmaScript.Net.1.0.1.0\lib\net20\EcmaScript.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-x86, Version=6.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Magick.NET-Q16-x86.6.8.7.901\lib\net40-client\Magick.NET-x86.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.TaskScheduler">
+      <HintPath>..\packages\TaskScheduler.2.2.0\lib\4\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.2.4.0.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="chartlib.cs" />
+    <Compile Include="configuration.cs" />
+    <Compile Include="dbquery.cs" />
+    <Compile Include="mimetype.cs" />
+    <Compile Include="modules.cs" />
+    <Compile Include="responder.cs" />
+    <Compile Include="router.cs" />
+    <Compile Include="server.cs" />
+    <Compile Include="serverintegration.cs" />
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="extension.cs" />
+    <Compile Include="tools.cs" />
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="..\LICENSE.MD">
+      <Link>LICENSE.MD</Link>
+    </None>
+    <None Include="..\README.MD">
+      <Link>README.MD</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="bin\Anamnesis\Anamnesis Server.lnk" />
+    <None Include="bin\Anamnesis\DBQuery.config.json" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis.v12.suo" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis\Anamnesis.v12.suo" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis\bin\Anamnesia.dll.config" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\Anamnesis.csprojResolveAssemblyReference.cache" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis\web.config" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis\web.Debug.config" />
+    <None Include="bin\Anamnesis\webAnamnesis\Anamnesis\web.Release.config" />
+    <None Include="bin\Anamnesis\WebQL.config.json" />
+    <None Include="bin\Anamnesis\webQL.exe.config" />
+    <None Include="bin\Anamnesis\WebQL.mimeTypes.json" />
+    <None Include="bin\Anamnesis\WebQL.routes.json" />
+    <None Include="bin\Anamnesis\webQL.vshost.exe.config" />
+    <None Include="bin\Anamnesis\webQL.vshost.exe.manifest" />
+    <None Include="bin\DB Demo\DBQuery.config.json" />
+    <None Include="bin\DB Demo\WebQL.config.json" />
+    <None Include="bin\DB Demo\WebQL.mimeTypes.json" />
+    <None Include="bin\DB Demo\WebQL.routes.json" />
+    <None Include="bin\dotHealth\DBQuery.config.json" />
+    <None Include="bin\dotHealth\WebQL.config.json" />
+    <None Include="bin\dotHealth\webQL.exe.config" />
+    <None Include="bin\dotHealth\WebQL.mimeTypes.json" />
+    <None Include="bin\dotHealth\WebQL.routes.json" />
+    <None Include="bin\dotHealth\webQL.vshost.exe.config" />
+    <None Include="bin\dotHealth\webQL.vshost.exe.manifest" />
+    <None Include="bin\Ganyweb\DBQuery.config.json" />
+    <None Include="bin\Ganyweb\MimeTypes.json" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\config" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\description" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\HEAD" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\hooks\README.sample" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\index" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\info\exclude" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\logs\HEAD" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\logs\refs\heads\master" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\01\858e34df8bb94007b04df13d83084bda22716d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\03\6897d721fce8906fa1bf5416986e8b77fc1362" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\03\78aeb894789f544206a0bf4ff772a06b9205fd" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\05\694ddb7b1ccec394fcaf2dbf3f8b8f52bf895d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\06\383e0ba48e7be608c09aab37caaed53ee52fc9" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\07\a8f10f95c5c874bebfc3292fe0731f5459774c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\08\fb5140031c75b9ced9b45b53f29ef840b1662f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\09\7c3bc236a3e79a540011a9af65a88c89153ab0" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\0a\3e9038fc5e104a8caf68c5b46c313ff72924b5" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\0b\a7480b8545a1dbc61af01aecdfeb0d74e8251c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\0c\1a0a97be36087dfb662aa0ab99685940e06f5e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\0d\20ec990309a0cf766c2d5cac846c58fbea95fd" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\0d\496d4b084d12acac17ccd90192033a40f8d07c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\0e\8134b7d243653364b605b3ced7dd474d2ba5c5" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\14\f5bb9bb720669358dad6b5a4cbee5883ade3a3" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\16\9e65c062df8d1d09d4b356b314df0c9b1a07bf" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\16\fce26e1c2e484a855638960cca2ddebb93f115" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\17\093c3cde4fade21e52bd10c37a4667cbc228f0" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\17\55dafd9af89e619eab7ef07cf3fa9959eff535" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\17\7cd02126c44e5fad41497db3bf5f50b19357c3" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\19\4b222c8ce45491e2ada8f8eb392fe5d27ea4d7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\1a\2d9e5ea3a994fb9ffdac8b17c39930b3d64b13" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\1b\2e5041336a7d62a976c4d002a660915491e699" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\1b\b6a071ca3686952865ed4729489e562b6d644a" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\1d\3dcb5986a5077e744346fae7f1d6edabd016d6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\1d\804ffb99699b9e030f1010314de0970b5a000d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\1e\3bc97af062e799477ddfe720f108d6443fb8e2" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\21\d88ae1c94cf2ef00ad82ef83c89559becf571f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\22\b930d8e59c36c8a0036b1faba451f9afc6d0b0" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\23\1d71dcdb2da3a12ab467235d080d7fac5c633c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\23\20641b43b2f1dd7aee05cc499a693f93c2e638" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\25\1622bec5def5f2aa685ab5f939c6f26ed700d1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\29\185505780733bbad73cea93a29bc054bf9a9f3" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\2a\136210b115f973200cc3d687a46dfadee746da" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\2b\32ed6f280058536835189a7339e36c1cb029a8" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\2c\9899ec8a0368e314306dd6525edd74932f47d2" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\2c\aa944d7d1daf58ee38f87491c5a9d8955c5941" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\2d\7ac59925d318957164c7a0d7d55b087f421eb6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\2e\0333f079435d40e0a6b5307be1033f230b6f1f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\31\20ae0c8c7aa5766efea517769ca7f94261801e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\31\bff60e2de1c1858fcd379db9d2348fe309c054" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\34\84448c17e156861813f783fc5c31e6a4e92f56" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\34\e1e1f97db1cddd5ba919293cc411f098e89f6c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\35\e67efb8b279b3f936f0e65c87a10310e4dd55a" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\37\f5c58874581ab61ec849d0ce1d01fcd7084093" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\38\ff9f853ce781299b92b471da4cb9d587100a66" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\39\2eeb00c565a513412e8cf90a208c2fe8826e2c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\39\e318c778220c3010bed33dd7ba7b7a58732a43" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3a\a64404872226669f8be15aeba5d0bbe789c5d5" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3c\095e7ffc85ad8af4aab5feb6c1058a27c67277" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3c\91ce1610688353b5593149737ce8725585e180" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3d\4869632ddd5fb8f3e5a464a05a2a76baf81e0a" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3d\61dc5e35867d190dd452c5b86910a8ce349890" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3d\cb299e6d4d5310b33783c3570128b8f224467c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3e\4ef19bc92fcacbb120893f4f99494ce9fa6126" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3f\537e4c766db3505e64d30968ca34b0635f12e7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\3f\b882040d4d4252773957608c1811921a022842" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\41\2eeda78dc9de1186c2e0e1526764af82ab3431" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\43\f15a24550acbd2efc7275f793e729bc8be3dc8" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\44\6df76c99a2c634616f162a32256bf4e05b555b" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\44\ebc48f4af49150bffe00de48bcfe08038bbd17" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\46\0d2ca7494d523779776baf0fac3ddd9dff1312" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\46\c747fae9106934006eadb1297c6337b4589da3" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\47\4ab80a66d11f0897dedb12b7ccf9e52d026a3c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\4a\d7479b783ca382e620e8f82b9eee1430465295" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\4b\dd5c961d452c49dfa0789c2c7ffb82c238fc24" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\4c\3c514bb08dcd0426c33cd0f914dda4a5b1e405" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\4d\0eef8e07607e736ec7597fc7336ef15fa6a6ae" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\4e\2b588abf2ba2840297980b58064a3aaa1cdfcd" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\4e\c9efd9783a5f050682c04e96fb72c293290e1e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\4e\e0de4afa7e721aeb124dad0a5b223d715cd4fa" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\51\5668a6b6c37f0c93f737def79a203e083b7d61" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\51\d8d84fca4a64900bdd20993c2db51f0a906ee6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\56\9ef94f7800dc92d0fc1ff266aca01753ce2800" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\56\e6daa72e3d293809e19b85b5e0d94bd5ecb44a" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\58\b99654dc0fa212acef49dde571cf00ad76a3eb" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\59\0d228ef5dfbd71ffadb4cfc21e0af7f6f5d8ce" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5a\33897b84c2854fa7ab2291e48d3c9fa223a7a6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5b\33f7e54f4e55b6b8774d86d96895db9af044b4" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5b\9cb898f50b2fb245a4ca1ff1c93670ed4a3792" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5b\c128bdd0cf086f11a97299562152d7bc6b1e7d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5c\115d0e9a065fb272a526852940d4f91f3ed412" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5c\5982ac649369ba8fa4c379c462a0f550ff2903" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5c\ea4a86c423fdc82d6d81b4754494985e852659" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5e\9e598e0c749fab7e7178e627a35270c0ed1789" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\5f\d81e588a3fa2343464cb2eb3aeab1eaaef4384" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\60\2bc5e6ee3696789a7cb8eccc79cc224edfbcec" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\61\cd39a4d6eda2d9c863d77db7aa42ec0844bb8f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\62\a30217d352cbe268953bb4d46be9d39ece609b" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\62\adf32ab6644b7e1f3e295a046f55514729fb97" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\63\e70e1786450eff17a947367038076c98ccc497" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\64\62ac98da220eed1eddf6b400db950f30214501" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\64\d7fa8e186ecb26043c78087ba7ec0232cbb26e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\66\73c7aea533b6e2df9de8d6437554f37101a218" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\67\8ecfad451e3332eea75f579180cf03e1a6f763" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\68\2b1e2f58eb66148d7ee9ba595f52d91dc2efed" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\6a\5b1d9bbef7e1b092539d8b3c697fc7dbbdeb13" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\6a\a516259e665994651952145428a8333d3e0734" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\6b\acd9d2a47d478032322f478c2a49f63010535e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\71\6665e93acce166e928d83be3468a5240bb6e83" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\71\dbfc4fb21ee9a99a8c2774073d4f63a36d75df" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\72\168624c9980654603d37f5566bd3d161e50a07" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\72\956c4456bea7d7e6c678b30ebf1304ea9795b6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\72\bb0e92f652cd864853ce86398c29024e9e12ef" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\72\edd5a761481a3598974dac6d741b31ca953fb7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\74\3ad3ca414b09bdf5c933d2c6b9d3192ecdb396" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\74\a58abda2ba2cc77ba68c5ee8b20e3e7924da41" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\75\700a7f21e01c5d750c0d05f6c75c6eb17e1eb1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\75\723bca5710f2c2f62fb99c5413ca143a049109" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\77\331c88e0ad8cc731a0994db41857729314baba" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\78\107862c9d2e857a4b8a20c4efd9ce655552756" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\78\26bfee0601f292b768f5a64ddfa4a3cb4d79df" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\79\98ec7a22afeade22cb4c2566b5bfafb901ab01" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\7b\2e1d5649aff4c8adb60e454b4bd77275dc071d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\7b\933e5541f5ea49ba5347341eb009c8986598a2" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\7b\e6766b5d12d2549ea1ed1f04ab4c3b20bd1170" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\7c\57436fc57705e300e32dfb04a13508b47ec534" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\7d\96f28d15f5a4a6906724b4a1516b0c1504f6b2" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\7d\b3baa1638a3258f3f674f9f55a22d7192d51c1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\7f\ad870bb0e2d18bd2ff4ba0cffb49e0fa4fc6b5" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\80\40129df16d8131034cd16daa2713b454840f7f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\80\4c7ee4c21d8e13d6c2f429b95ade95300a84b9" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\82\a1d568752fc7fa58b6b982dbfc70a8bb630fe7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\83\59f81d7d3b0e53ba05fb3ae7552dbf42d1b9bb" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\84\1fbd895c6b0ced8bb29d771cfac37ef67dcbcf" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\84\296f8e7ccbbd0221051e465ed832fa0100acb3" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\84\557bbee01edb36593d4cef4be7ed1b4f5b9a2d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\85\67d5e49bca19a5e93448016b104c3e77d5286e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\85\edc50295bfd6b1124594d7d07e1dc8506f122a" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\86\334552edec456966f3b5bd4b9e00b73a180bd7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\88\029a82d4f2d675e97b4f6b56643a5bd5a7e594" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\88\4c9d2703775305168d0e36579816ca95140fc1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\88\febc995328c06a8ef969c116171157bca1a0a6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\8a\5e0f368309c30f27bdbf1588eafb0b624b72df" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\8a\a52bc7d8a74739dc5e0ad9c35a006bdcbda182" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\8c\7fa596637a4dd6188236bc92a8ceb1122f9f67" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\8d\19e3911e0d6d2098ad89121f3815b7fe50dc50" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\8d\235ff1d47097e2a5a28c1b0bf7cd30e6348855" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\90\9971074c9d4124433fdc43dae10fb655ad545b" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\93\7e0299b23c611fb521e4985b9a897fc4e6618e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\93\d01a1c6efd12158f279efbded3af1f68801028" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\93\e56ad9cca9f2e3d77d5e5333391a8432ff8a62" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\94\0f1583e07311f6b90c3487036cbf7235e18075" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\94\bec8d4e051bfa7376b2ad1eb43ef8a1f78db72" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\95\f87678a794fb426520b9013de698b6b5897213" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\96\55590a7baf195950e43fa50b1db5194df42ab4" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\99\18586deb9ee9b2fd32f37cbb23d82419571cf3" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\99\57889c689bd3ec328fa893d3187da63620a2ca" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9a\32d1f8069c3cf725a78ba40796d2901b0defd6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9d\fcd760eb7094bfb9aed8b8ea9e1a5b457777bb" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9e\3f74504f710dbdfd155c2255676678f39bfbff" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9e\78698d729334aefeea3eb70b5acf7d0a5b3990" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9e\b75cb0ac153f4f59753e0a749fec016d68540a" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9f\47949e170ab696671bd64e8a0cadb0d492131b" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9f\4c3d6a2b5bffc7529ef77789f4b9a1258c967e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\9f\573a685a9703f6bc9ab9bbac4c5f8bbb02405f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a0\55904dec5c41d2af58dd67378150145a752b0d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a1\382ac68845a99ec7d9a9e1bed0ffabc910b3f4" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a2\722b81267c749aa03347c2157fc012c1c67fb7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a2\b60e045cb514042ac12d46c2959405c0b51f52" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a2\eedab51b6f477578f36f05e02c0efcee5b8d9b" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a2\f7f589557960fec16cb479331bd44a722c24fc" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a3\9e62f51f387691ec0dd18f7e15ca87ed2dcb50" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a4\d3e45155fdbb1b904f46420931d973d254e0b6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a4\e504d21cf19909205dc199a9108dbd2ce42cbd" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a5\7aa09cfc29f3a3ecfea7a61009c28f1871444d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a6\971f58f313754a9b73671945e49e072209a3fe" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a6\e71a52d943c1db7d380b39c1c3c536f6450986" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a6\e8935700fbe34558a5376c42bcbbca554d7a76" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a8\b51bb3d55b730731c328c79f3c79952ae32052" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a8\df5eb8fcaecd15f1e4dd7c3cfc84707015c2d6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a9\a3da465c065b8499cf95a3e70418cee354dcd2" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\a9\b54b8ea1f068961bb863cb2170e4bc88727fac" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\aa\4de336dd701f9738741ec0a5a9c93cdb19df6b" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\af\004e5f848b2d8b3e010e10086b2e33942caee7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\af\80d47686b991657810935d6dad512c335f8cdd" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\af\971683137d25b41bdb9276c3256f23ac06325d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\af\cc1d6392c1cac599fad1cfd37609a1cf3689b1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\af\efa0ca994f4e4ac11e8954c71855878eca86c2" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b1\884726c850318d153278c402ece2693de37faa" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b4\347a830fb270845041aa6a38febb63e570dd46" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b4\58c599c31aa243a64176ecc9f4b464b5130a67" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b4\8d8ffea2d67b5c59b8387c1e00d71fa9c53a15" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b4\96ea4c5f9ef1a1e97d39a7aae4e2e365bd52e5" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b6\43611aa28d21c647772a9c9086e25be5c897f6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b9\563f9e293c17b5bc233aee061faf445925d5ba" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b9\b9aad22c7afd22516777efeeb20e21113b6c38" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b9\d6bd92f5f09e195d6bc19536500b6494dd2b75" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\b9\e8d0d419eafb93aa371a7727c4a4134b1f50d4" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\bd\7e2a57764993a02d71abb516b4c47e5a0b1bd1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c0\31f7ba41d9827870780e4ae0247afebd236bcc" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c0\c4a15d33611368de9ef9374afebc55fdf892d2" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c1\069d17b320f6427cc496dff101d32639a8ac29" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c1\ae7e24044edf0f701e0090ec1d6690369195f5" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c2\9f8bc290b27b82e5f81dcfc005379b1beab0c4" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c4\4a6fb65b50d22adde26ae2c68c13635e062472" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c4\a67301ee6d486fbbea57c3c1bb33d0bb991af9" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c4\d0f16d4b338b334480ddcc1cae543d69a6ecbf" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c6\cac8879daf79f0732b99457184bc8fd628b792" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c7\da4923608062331c243ca1a8cef5b0ef920676" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c7\ebe1876742c7e917a3e82ba4819cc6f35cd53d" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c8\4cc098ee154edc45ab81d1ac9e120c2639048f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\c8\bb7be8b8ff4076f86797aa8f08dde71035191c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ca\28ba39cc90472e847183416875762abcb3164f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ca\94b6a6ca8c068b4c4fee3c89322a47a5740376" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\cb\34225acc0aea1fe6f369c4d162ddf23842c85b" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\cc\f6d6046b702768d64952231f96b2aa433f89d9" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\cd\506e4f4b2f561421365945d0ad1ab410791d74" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\cd\5f18acc86062b84a090784c2edb60a03222326" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\cd\d62f971788c5dab19f63e81680b6aca1f06fff" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ce\c090282136a332b5b00de96ed4726c4175e654" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ce\db1085b85cf28fec0152168da61defb93fd6fa" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\cf\5fab3adf243318d11ec95448c6deae3f52d9b1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\cf\d981ac50bfd833cb8261396d25b73de484a842" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d1\2760bbddc8c5c3af751d245ff19774b4b405c6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d1\ac114bb4e521f237c58650faf107494e976c3e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d2\ff69b60c3d21a6ac2fbe86e11ad146f3bda058" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d3\850e47113b78123b02a224d6aa14dffd2ab963" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d4\a04dc16dab7f777b981a94de11a6369c417c60" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d4\b4db987cdc911130de6067a6624406b6741fec" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d4\f8b43176a4c2ca91ad319a3bc16957c07e1103" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d6\c516f653e13c04cb4e0e5fc5500ade02d393c0" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\d8\007ffa53e1f55b2e54acb1da772f156db2fb60" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\db\1d3aa0d8ee7857161ecbb1cb49167cdadfbaaa" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\dc\66d914e83151fd6c6e3a7cd5505c5634e8f1e7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\dd\647adda855e304ee5ccebac41eb459bce248ae" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\dd\7edc2dba15ccfc1ca6ec46a84c47e3ff0ad363" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\de\71eb99ae5556be8156dd9a58c27fc3b04c2df7" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\de\9b4fb2a47e3b63b4513e3159e376b6c3046f6e" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\e5\b8e35a4af8fcb5f8cd217f7a4a50f50da198cb" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\e6\ba4a831e93e559e8209410877ae28a289c2f94" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\e9\7c17d917347cc0a1b5e1d9c38a927e46c70952" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ec\6a2bf8f7938d21ad0a5bac1d31ddd771166108" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ed\e32c1fa222f0ee0edd85c70725660e9518eec6" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ee\2c4a46797a675dcdd7a7b987da1d11a997e102" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ee\d0abfdc051ab66c21dee6a7c0c5f9f3e2f33cc" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ef\1512a827acee55e6eb4b88328eb1a03506ab21" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ef\3a6b1cf777e451fa2a2e373bbbcb0ba91b6fbb" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\ef\b2445f0a3e2ac7ae3cca3891895d34e1eb2b95" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f0\9b2e4c20f7c13c8663eacbec2ebe4d03a0d374" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f1\46cf9976bb70df603d9f2467c0dfede11c6424" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f4\81a04aab282f77e5363b18353fd3ae288e503f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f4\838d47e004d53d8714e633894bd89c3216e605" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f5\f279221073ff6764363260392b53f44ac468fa" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f6\f2e03f60cbbe72cfba26727e6ec2b0b9e10735" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f7\506705e5d65ab54e41d7224e7d6738cfffba5f" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f7\a9187dff2710ffd92d0b10eac96a9659a19bdc" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f7\ec5af2044e9d8b45a593e17b37599c972319ae" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\f9\c51464619bdda1e2b124c42667026d9ee8d02c" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\fa\3476399990dd456a18eb0905bf1f8909ff5d11" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\fa\5f28d960a194bed6bdd49b388451dc3fd8b51a" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\fb\130a1ac134b8af2b2412cd755f8daa94d31eb3" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\fd\118c66410b9073973f854e5b9eeea499ba9f53" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\fd\a13f1bebb588e4197131b72ac96e4b5cfc25ff" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\fd\aeee866f128ca99410dbec4328f64f1be167c8" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\objects\fe\5d96e3c69bb043c27dfbfdc137f45ee558c1d1" />
+    <None Include="bin\Ganyweb\webGanyweb\.git\refs\heads\master" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb.v12.suo" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\bin\Ganyweb.dll.config" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\html\medinfo\Doping.cshtml" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\Ganyweb.csprojResolveAssemblyReference.cache" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\Ganyweb.csprojResolveAssemblyReference.cache" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\web.config" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\web.Debug.config" />
+    <None Include="bin\Ganyweb\webGanyweb\Ganyweb\web.Release.config" />
+    <None Include="bin\Ganyweb\webGanyweb\README.MD" />
+    <None Include="bin\Ganyweb\WebQL.config.json" />
+    <None Include="bin\Ganyweb\webQL.exe.config" />
+    <None Include="bin\Ganyweb\WebQL.mimeTypes.json" />
+    <None Include="bin\Ganyweb\WebQL.routes.json" />
+    <None Include="bin\Ganyweb\webQL.setting" />
+    <None Include="bin\Ganyweb\webQL.vshost.exe.config" />
+    <None Include="bin\Ganyweb\webQL.vshost.exe.manifest" />
+    <None Include="bin\Release\dbQuery.config.json" />
+    <None Include="bin\Release\MimeTypes.json" />
+    <None Include="bin\Release\WebQL.config.json" />
+    <None Include="bin\Release\WebQL.mimeTypes.json" />
+    <None Include="bin\Release\WebQL.routes.json" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Anamnesis\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\Anamnesis\log\11.05.2014 logWebQL.txt" />
+    <Content Include="bin\Anamnesis\Magick.NET-x86.dll" />
+    <Content Include="bin\Anamnesis\Magick.NET-x86.xml" />
+    <Content Include="bin\Anamnesis\Newtonsoft.Json.dll" />
+    <Content Include="bin\Anamnesis\Newtonsoft.Json.xml" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\404.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\Anamnesis.csproj" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\Anamnesis.csproj.user" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\Anamnesis.sln" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\bin\Anamnesia.dll" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\bin\Anamnesia.pdb" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\css\app.css" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\css\favicon.png" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\asker.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\editor.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\learner.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\list.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\ask.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\askQuestions - Kopieren.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\bettenspiegel.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\camera.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\charts.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\couchDB.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\dbDemo.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\diagnose.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\diagnosecloud.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\EditDiagnose - Kopieren.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\EditDiagnose.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\kartei.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\LinkQuestionDiagnose - Kopieren.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\map.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\patient.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\setting.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\LostFound\zuweiser.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\templates\auth.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\templates\error.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\templates\include.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\templates\list.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\templates\listSimple.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\templates\listSuspected.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\html\templates\menu.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\index.html" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js404.htm" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js404.jpg" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\app.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\bundle.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\controllers.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\crypto\aes.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\crypto\sha256.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\directives.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\filters.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\init.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-animate.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-cookies.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-resource.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-route.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-sanitize.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-touch.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-ui-router.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\angular-ui-select2.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\Archiv\fingerprint_arr.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\fileupload.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\fingerprint.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\flotr2.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\jquery.heapbox-0.9.2.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\select2.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\lib\speechrecognition.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\LostFound\controllers - OLD.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\LostFound\services - Kopieren.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\min\app.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\min\bundle.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\min\controllers.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\min\directives.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\min\filters.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\min\init.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\min\services.min.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\js\services.js" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\Anamnesia.dll" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\Anamnesia.pdb" />
+    <Content Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\Anamnesis.csproj.FileListAbsolute.txt" />
+    <Content Include="bin\Anamnesis\webQL.exe" />
+    <Content Include="bin\Anamnesis\webQL.pdb" />
+    <Content Include="bin\Anamnesis\webQL.vshost.exe" />
+    <Content Include="bin\dotHealth\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\dotHealth\log\14.04.2014 logWebQL.txt" />
+    <Content Include="bin\dotHealth\log\15.04.2014 logWebQL.txt" />
+    <Content Include="bin\dotHealth\log\16.04.2014 logWebQL.txt" />
+    <Content Include="bin\dotHealth\log\17.04.2014 logWebQL.txt" />
+    <Content Include="bin\dotHealth\log\18.04.2014 logWebQL.txt" />
+    <Content Include="bin\dotHealth\Magick.NET-x86.dll" />
+    <Content Include="bin\dotHealth\Magick.NET-x86.xml" />
+    <Content Include="bin\dotHealth\Newtonsoft.Json.dll" />
+    <Content Include="bin\dotHealth\Newtonsoft.Json.xml" />
+    <Content Include="bin\dotHealth\webQL.exe" />
+    <Content Include="bin\dotHealth\webQL.pdb" />
+    <Content Include="bin\dotHealth\webQL.vshost.exe" />
+    <Content Include="bin\Ganyweb\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\Ganyweb\log\11.05.2014 logWebQL.txt" />
+    <Content Include="bin\Ganyweb\Magick.NET-x86.dll" />
+    <Content Include="bin\Ganyweb\Magick.NET-x86.xml" />
+    <Content Include="bin\Ganyweb\Newtonsoft.Json.dll" />
+    <Content Include="bin\Ganyweb\Newtonsoft.Json.xml" />
+    <Content Include="bin\Ganyweb\webGanyweb\.gitattributes" />
+    <Content Include="bin\Ganyweb\webGanyweb\.gitignore" />
+    <Content Include="bin\Ganyweb\webGanyweb\.git\ms-persist.xml" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb.sln" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\404.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\bin\Ganyweb.dll" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\bin\Ganyweb.pdb" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\camera\example.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\camera\gumwrapper.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\camera\gumwrapper.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\animate.css" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\app.css" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\bundle.css" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\favicon.ico" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\favicon.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-accept.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-back.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-cancel.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-collapse.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-expand.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-forward.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-next-item.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-previous-item.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\1-navigation-refresh.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-accounts.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-add-alarm.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-alarms.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-battery.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-bightness-low.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-bluetooth-connected.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-bluetooth-searching.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-bluetooth.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-brightness-auto.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-brightness-high.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-brightness-medium.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-call.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-camera.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-data-usage.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-dial-pad.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-end-call.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-flash-automatic.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-flash-off.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-flash-on.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-location-found.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-location-off.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-location-searching.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-mic-muted.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-mic.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-network-cell.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-network-wifi.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-new-account.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-not-secure.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-ring-volume.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-screen-locked-to-landscape.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-screen-locked-to-portrait.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-screen-rotation.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-sd-storage.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-secure.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-storage.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-switch-camera.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-switch-video.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-time.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-usb.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-video.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-volume-muted.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\10-device-access-volume-on.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\11-alerts-and-states-airplane-mode-off.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\11-alerts-and-states-airplane-mode-on.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\11-alerts-and-states-error.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\11-alerts-and-states-warning.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-computer.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-dock.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-gamepad.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-headphones.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-headset.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-keyboard.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-mouse.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\12-hardware-phone.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\2-action-about.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\2-action-help.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\2-action-search.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\2-action-settings.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\3-rating-bad.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\3-rating-favorite.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\3-rating-good.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\3-rating-half-important.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\3-rating-important.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\3-rating-not-important.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-cloud.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-collection.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-go-to-today.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-labels.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-new-label.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-sort-by-size.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-view-as-grid.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\4-collections-view-as-list.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-attachment.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-backspace.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-copy.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-cut.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-discard.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-edit.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-email.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-event.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-import-export.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-merge.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-new-attachment.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-new-email.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-new-event.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-new-picture.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-new.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-paste.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-picture.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-read.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-remove.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-save.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-select-all.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-split.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-undo.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\5-content-unread.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-add-group.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-add-person.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-cc-bcc.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-chat.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-forward.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-group.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-person.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-reply-all.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-reply.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-send-now.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\6-social-share.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\7-location-directions.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\7-location-map.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\7-location-place.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\7-location-web-site.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\8-images-crop.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\8-images-rotate-left.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\8-images-rotate-right.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\8-images-slideshow.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-add-to-queue.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-download.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-fast-forward.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-full-screen.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-make-available-offline.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-next.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-pause-over-video.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-pause.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-play-over-video.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-play.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-previous.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-repeat.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-replay.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-return-from-full-screen.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-rewind.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-shuffle.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-stop.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\icon\9-av-upload.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\select2\select2-bootstrap.css" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\select2\select2-spinner.gif" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\select2\select2.css" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\select2\select2.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\css\select2\select2x2.png" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\dictate\Sprachmemo 002 - Kopie.m4a" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\dictate\Sprachmemo 002.m4a" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\Ganyweb.csproj" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\Ganyweb.csproj.user" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\bettenspiegel.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\camera.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\charts.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\couchDB.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\dbDemo.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\diagnose.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\diagnosecloud.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\kartei.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\map.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\medinfo\AustriaCodex.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\medinfo\Cochrane.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\medinfo\druginteraction.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\medinfo\FraxScore.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\medinfo\HipScore.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\medinfo\ICD10.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\patient.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\setting.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\templates\auth.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\templates\error.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\templates\include.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\templates\menu.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\html\zuweiser.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\img\404.jpg" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\index.html" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js404.htm" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js404.jpg" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\app.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\bundle.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\controllers.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\crypto\aes.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\crypto\sha256.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\directives.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\filters.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\init.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-animate.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-cookies.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-resource.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-route.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-sanitize.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-touch.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-ui-router.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\angular-ui-select2.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\Archiv\fingerprint_arr.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\fileupload.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\fingerprint.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\flotr2.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\jquery.heapbox-0.9.2.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\select2.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\lib\speechrecognition.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\min\app.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\min\bundle.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\min\controllers.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\min\directives.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\min\filters.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\min\init.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\min\services.min.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\js\services.js" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\mp3\app.css" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\mp3\test.avi" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\mp3\test.jpg" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\mp3\test.mp3" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\Ganyweb.csproj.FileListAbsolute.txt" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\Ganyweb.dll" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\Ganyweb.pdb" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\Ganyweb.csproj.FileListAbsolute.txt" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\Ganyweb.dll" />
+    <Content Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\Ganyweb.pdb" />
+    <Content Include="bin\Ganyweb\webQL.exe" />
+    <Content Include="bin\Ganyweb\webQL.pdb" />
+    <Content Include="bin\Ganyweb\webQL.vshost.exe" />
+    <Content Include="webserver.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Anamnesis\webAnamnesis\Anamnesis\obj\Debug\TempPE\" />
+    <Folder Include="bin\Ganyweb\webGanyweb\.git\objects\info\" />
+    <Folder Include="bin\Ganyweb\webGanyweb\.git\objects\pack\" />
+    <Folder Include="bin\Ganyweb\webGanyweb\.git\refs\tags\" />
+    <Folder Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Debug\TempPE\" />
+    <Folder Include="bin\Ganyweb\webGanyweb\Ganyweb\obj\Release\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
