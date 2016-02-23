@@ -14,13 +14,46 @@ namespace webQL
   
     public partial class main : Form
     {
+        // Interface Form for WebQL Server
         public main()
         {
             InitializeComponent();
         }
 
+        //  public static RethinkDB r = RethinkDB.r;
+        //  public void can_connect()
+        //  {
 
-        
+        //      Console.WriteLine("CAN CONNECT");
+
+        //      var c = r.connection();
+
+        //      Console.WriteLine("CAN 1");
+
+        //      c.hostname("192.168.99.100");
+        //      Console.WriteLine("CAN 2");
+
+        //      c.port(RethinkDBConstants.DEFAULT_PORT);
+        //      Console.WriteLine("CAN 3");
+
+        //      c.timeout(60);
+        //      Console.WriteLine("CAN 4");
+
+        //      c.connect();
+
+        //      Console.WriteLine("CAN CONNECT");
+
+        ////      int result = r.random(1, 9).add(r.random(1, 9)).run<int>(c);
+        //      Console.WriteLine(7);
+        //  }
+        //  private bool rethinkDB()
+        //  {
+
+
+
+        //      return true;
+        //  }
+
 
         #region Declaration
 
@@ -30,41 +63,7 @@ namespace webQL
         private int truncateTooltip = 256;  // truncate Tooltiptext
 
         #endregion
-
-      //  public static RethinkDB r = RethinkDB.r;
-      //  public void can_connect()
-      //  {
-
-      //      Console.WriteLine("CAN CONNECT");
-
-      //      var c = r.connection();
-
-      //      Console.WriteLine("CAN 1");
-
-      //      c.hostname("192.168.99.100");
-      //      Console.WriteLine("CAN 2");
-
-      //      c.port(RethinkDBConstants.DEFAULT_PORT);
-      //      Console.WriteLine("CAN 3");
-
-      //      c.timeout(60);
-      //      Console.WriteLine("CAN 4");
-
-      //      c.connect();
-
-      //      Console.WriteLine("CAN CONNECT");
-
-      ////      int result = r.random(1, 9).add(r.random(1, 9)).run<int>(c);
-      //      Console.WriteLine(7);
-      //  }
-      //  private bool rethinkDB()
-      //  {
-
-
-
-      //      return true;
-      //  }
-
+        
         #region Private Methods
 
         private Exception init()
@@ -709,8 +708,6 @@ namespace webQL
         
         #endregion
 
-      
-   
       
         
     }
