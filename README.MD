@@ -2,6 +2,8 @@
 
 **Build a clientside WebApp and integrate easy Data from a MS-SQL Database**
 
+DEPRECATED - RAPID PROTOTYPE -  NOT FOR PROD
+
 -----
 ## Overview ##
 
